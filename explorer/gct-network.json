@@ -1,0 +1,50 @@
+{
+	"name": "gct-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.org1.aria.com.np": {}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org1.aria.com.np/users/Admin@org1.aria.com.np/msp/keystore/198e70f03a9c4d39166c780c24396d3fa24ce701850f6bfdeb9413840be0f021_sk"
+			},
+			"peers": [
+				"peer0.org1.aria.com.np"
+			],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org1.aria.com.np/users/Admin@org1.aria.com.np/msp/signcerts/cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.org1.aria.com.np": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org1.aria.com.np/peers/peer0.org1.aria.com.np/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.org1.aria.com.np:7051"
+		}
+	}
+}
